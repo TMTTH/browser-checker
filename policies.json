@@ -1,6 +1,69 @@
 {
-  "chromium": {
-    "javascript_enabled": true,
-    "cookies_count": 1
+  "chrome": {
+    "display_name": "Google Chrome",
+    "process_name": "chrome.exe",
+    "user_data_dir": "%LOCALAPPDATA%\\Google\\Chrome\\User Data",
+    "exe_candidates": [
+      "%PROGRAMFILES%\\Google\\Chrome\\Application\\chrome.exe",
+      "%PROGRAMFILES(X86)%\\Google\\Chrome\\Application\\chrome.exe",
+      "%LOCALAPPDATA%\\Google\\Chrome\\Application\\chrome.exe"
+    ],
+    "registry_app_paths": [
+      "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\chrome.exe"
+    ],
+    "single_profile": false,
+    "checks": {
+      "safe_browsing_enhanced": { "expected": true,         "label": "Safe Browsing (enhanced)" },
+      "https_only_mode":        { "expected": true,         "label": "HTTPS-First Mode" },
+      "doh_mode_secure":        { "expected": "secure",     "label": "DNS-over-HTTPS (secure)" },
+      "site_per_process":       { "expected": true,         "label": "Site Isolation" },
+      "extension_blocklist":    { "expected": "all_blocked","label": "Блокировка установки расширений" },
+      "javascript_enabled":     { "expected": true,         "label": "JavaScript включён" }
+    }
+  },
+  "yandex": {
+    "display_name": "Yandex Browser",
+    "process_name": "browser.exe",
+    "user_data_dir": "%LOCALAPPDATA%\\Yandex\\YandexBrowser\\User Data",
+    "exe_candidates": [
+      "%LOCALAPPDATA%\\Yandex\\YandexBrowser\\Application\\browser.exe",
+      "%PROGRAMFILES%\\Yandex\\YandexBrowser\\Application\\browser.exe",
+      "%PROGRAMFILES(X86)%\\Yandex\\YandexBrowser\\Application\\browser.exe"
+    ],
+    "registry_app_paths": [
+      "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\browser.exe"
+    ],
+    "single_profile": false,
+    "checks": {
+      "safe_browsing_enhanced": { "expected": true,         "label": "Protect (расширенный режим)" },
+      "https_only_mode":        { "expected": true,         "label": "HTTPS-First Mode" },
+      "doh_mode_secure":        { "expected": "secure",     "label": "DNS-over-HTTPS (secure)" },
+      "site_per_process":       { "expected": true,         "label": "Site Isolation" },
+      "extension_blocklist":    { "expected": "all_blocked","label": "Allowlist расширений" },
+      "javascript_enabled":     { "expected": true,         "label": "JavaScript включён" }
+    }
+  },
+  "opera": {
+    "display_name": "Opera",
+    "process_name": "opera.exe",
+    "user_data_dir": "%APPDATA%\\Opera Software\\Opera Stable",
+    "exe_candidates": [
+      "%LOCALAPPDATA%\\Programs\\Opera\\opera.exe",
+      "%PROGRAMFILES%\\Opera\\opera.exe",
+      "%PROGRAMFILES(X86)%\\Opera\\opera.exe"
+    ],
+    "registry_app_paths": [
+      "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Opera.exe",
+      "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\opera.exe"
+    ],
+    "single_profile": true,
+    "checks": {
+      "safe_browsing_enhanced": { "expected": true,         "label": "Безопасный просмотр" },
+      "https_only_mode":        { "expected": true,         "label": "Принудительное HTTPS" },
+      "doh_mode_secure":        { "expected": "secure",     "label": "DNS-over-HTTPS" },
+      "site_per_process":       { "expected": true,         "label": "Строгая изоляция сайтов" },
+      "extension_blocklist":    { "expected": "all_blocked","label": "Блокировка установки расширений" },
+      "javascript_enabled":     { "expected": true,         "label": "JavaScript включён" }
+    }
   }
 }
